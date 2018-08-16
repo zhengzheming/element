@@ -1,6 +1,6 @@
 {
   "name": "element-ui--forked",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Component Library for Vue.js. (fork from element-ui 2.4.5)",
   "main": "lib/element-ui.common.js",
   "files": [
