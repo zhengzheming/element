@@ -61,12 +61,13 @@
     cursor: pointer;
 
     .el-message-box__close {
-      color: $--color-info;
+      font-size: 24px;
+      //color: $--color-info;
     }
 
     &:focus, &:hover {
       .el-message-box__close {
-        color: $--color-primary;
+        //color: $--color-primary;
       }
     }
 
@@ -93,6 +94,7 @@
   @include e(status) {
     position: absolute;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     font-size: 24px !important;
 
@@ -125,6 +127,7 @@
 
   @include e(message) {
     margin: 0;
+    text-align: center;
 
     & p {
       margin: 0;
@@ -141,7 +144,7 @@
 
   @include e(btns) {
     padding: 5px 15px 0;
-    text-align: right;
+    text-align: center;
 
     & button:nth-child(2) {
       margin-left: 10px;

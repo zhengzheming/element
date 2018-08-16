@@ -28,13 +28,15 @@
           </button>
         </div>
         <div class="el-message-box__content">
-          <div
-            :class="['el-message-box__status', icon]"
-            v-if="icon && !center && message !== ''">
-          </div>
           <div class="el-message-box__message" v-if="message !== ''">
             <slot>
-              <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
+              <div v-if="!dangerouslyUseHTMLString" style="display: inline-block;position: relative; padding-left: 34px;">
+                <div
+                  :class="['el-message-box__status', icon]"
+                  v-if="icon && !center && message !== ''">
+                </div>
+                {{ message }}
+              </div>
               <p v-else v-html="message"></p>
             </slot>
           </div>
@@ -51,7 +53,7 @@
         <div class="el-message-box__btns">
           <el-button
             :loading="cancelButtonLoading"
-            :class="[ cancelButtonClasses ]"
+            :class="[ cancelButtonClasses, 'btn-w-base' ]"
             v-if="showCancelButton"
             :round="roundButton"
             @click.native="handleAction('cancel')"
@@ -61,7 +63,7 @@
           <el-button
             :loading="confirmButtonLoading"
             ref="confirm"
-            :class="[ confirmButtonClasses ]"
+            :class="[ confirmButtonClasses, 'btn-w-base' ]"
             v-show="showConfirmButton"
             :round="roundButton"
             @click.native="handleAction('confirm')"
@@ -115,7 +117,7 @@
         default: true
       },
       center: {
-        default: false,
+        default: true,
         type: Boolean
       },
       roundButton: {
