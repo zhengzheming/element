@@ -63,6 +63,7 @@
           <el-button
             :loading="confirmButtonLoading"
             ref="confirm"
+            type="primary"
             :class="[ confirmButtonClasses, 'btn-w-base' ]"
             v-show="showConfirmButton"
             :round="roundButton"
